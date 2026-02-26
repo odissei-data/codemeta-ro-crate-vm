@@ -1,20 +1,29 @@
+# Specs: CPU: 7, RAM: 2G, Disk: 24G
 - hosts: localhost
   become: true
+  vars:
+    infra_disk: 24GB
+    infra_mem: 2GB
+    infra_cpu: 7
   tasks:
-  - name: Atualizar APT
+  - name: Update system cache
     apt:
       update_cache: 'yes'
-  - name: "Clonar Reposit\xF3rio"
+  - name: Install git
+    package:
+      name: git
+      state: present
+  - name: 'Ensure system software is installed: swi-prolog'
+    package:
+      name: swi-prolog
+      state: present
+    ignore_errors: true
+  - name: 'Ensure system software is installed: swi-prolog-nox'
+    package:
+      name: swi-prolog-nox
+      state: present
+    ignore_errors: true
+  - name: Clone Alpino
     git:
       repo: https://github.com/rug-compling/Alpino
       dest: /home/ubuntu/Alpino
-  - name: Instalar prolog
-    package:
-      name: prolog
-      state: present
-    ignore_errors: true
-  - name: Configurar entrada na pasta
-    lineinfile:
-      path: /home/ubuntu/.bashrc
-      line: cd /home/ubuntu/Alpino
-      state: present

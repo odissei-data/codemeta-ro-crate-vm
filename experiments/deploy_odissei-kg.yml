@@ -1,30 +1,34 @@
+# Specs: CPU: 2, RAM: 4G, Disk: 15G
 - hosts: localhost
   become: true
+  vars:
+    infra_disk: 15GB
+    infra_mem: 4GB
+    infra_cpu: 2
   tasks:
-  - name: Atualizar APT
+  - name: Update system cache
     apt:
       update_cache: 'yes'
-  - name: "Clonar Reposit\xF3rio"
-    git:
-      repo: https://github.com/odissei-data/odissei-kg
-      dest: /home/ubuntu/odissei-kg
-  - name: Instalar nodejs
+  - name: Install git
+    package:
+      name: git
+      state: present
+  - name: 'Ensure system software is installed: nodejs'
     package:
       name: nodejs
       state: present
     ignore_errors: true
-  - name: Instalar npm
+  - name: 'Ensure system software is installed: npm'
     package:
       name: npm
       state: present
     ignore_errors: true
-  - name: Instalar typescript
+  - name: 'Ensure system software is installed: typescript'
     package:
       name: typescript
       state: present
     ignore_errors: true
-  - name: Configurar entrada na pasta
-    lineinfile:
-      path: /home/ubuntu/.bashrc
-      line: cd /home/ubuntu/odissei-kg
-      state: present
+  - name: Clone odissei-kg
+    git:
+      repo: https://github.com/odissei-data/odissei-kg
+      dest: /home/ubuntu/odissei-kg

@@ -1,7 +1,9 @@
 {
-    "name": "ODISSEI-code-library",
-    "softwareRequirements": [
-        "ruby"
-    ],
-    "allocated_disk": "11G"
+    "name": "wimu",
+    "software": [],
+    "infra": {
+        "disk": "11GB",
+        "memory": "2GB",
+        "cpus": 2
+    }
 }

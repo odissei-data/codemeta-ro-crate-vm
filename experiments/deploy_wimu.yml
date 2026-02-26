@@ -1,15 +1,34 @@
+# Infrastructure: 2 CPUs | 4GB RAM | 15GB Disk
 - hosts: localhost
   become: true
+  vars:
+    allocated_disk: 15GB
+    allocated_mem: 4GB
+    allocated_cpu: 2
   tasks:
-  - name: Update apt cache
+  - name: Update system package cache
     apt:
       update_cache: 'yes'
   - name: Install git
     package:
       name: git
       state: present
-    ignore_errors: true
-  - name: Clone the Repository
+  - name: Clone wimu
     git:
       repo: https://github.com/firmao/wimu.git
       dest: /home/ubuntu/wimu
+  - name: Explicitly Install default-jre
+    package:
+      name: default-jre
+      state: present
+    ignore_errors: true
+  - name: Explicitly Install maven
+    package:
+      name: maven
+      state: present
+    ignore_errors: true
+  - name: Explicitly Install openjdk-17-jdk
+    package:
+      name: openjdk-17-jdk
+      state: present
+    ignore_errors: true

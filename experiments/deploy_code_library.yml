@@ -1,20 +1,24 @@
+# Specs: CPU: 2, RAM: 2G, Disk: 15G
 - hosts: localhost
   become: true
+  vars:
+    infra_disk: 15GB
+    infra_mem: 2GB
+    infra_cpu: 2
   tasks:
-  - name: Atualizar APT
+  - name: Update system cache
     apt:
       update_cache: 'yes'
-  - name: "Clonar Reposit\xF3rio"
-    git:
-      repo: https://github.com/odissei-data/ODISSEI-code-library
-      dest: /home/ubuntu/ODISSEI-code-library
-  - name: Instalar ruby
+  - name: Install git
+    package:
+      name: git
+      state: present
+  - name: 'Ensure system software is installed: ruby'
     package:
       name: ruby
       state: present
     ignore_errors: true
-  - name: Configurar entrada na pasta
-    lineinfile:
-      path: /home/ubuntu/.bashrc
-      line: cd /home/ubuntu/ODISSEI-code-library
-      state: present
+  - name: Clone ODISSEI-code-library
+    git:
+      repo: https://github.com/odissei-data/ODISSEI-code-library
+      dest: /home/ubuntu/ODISSEI-code-library
