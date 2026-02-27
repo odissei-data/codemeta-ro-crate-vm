@@ -24,6 +24,7 @@ Install PyYAML and requests: You'll need this for the Python script to read your
 - `pip install pyyaml`
 - `pip install requests`
 - `pip install flask`
+- `pip install rdflib`
 
 Execution
 - `python extrac_run.py`
