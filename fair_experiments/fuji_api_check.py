@@ -10,7 +10,7 @@ def run_fuji_authenticated(target_doi):
     # Update these with your actual credentials
     # If you are at VU/NFDI, use your provided service account details
     username = "admin" 
-    password = "admin1234"
+    password = "admin"
 
     # Use a Session to persist headers and auth
     session = requests.Session()
@@ -21,10 +21,14 @@ def run_fuji_authenticated(target_doi):
     })
 
     payload = {
-        "object_identifier": target_doi,
-        "test_debug": True,
-        "use_datacite": True
-    }
+  "object_identifier": target_doi,
+  "test_debug": True,
+  "metadata_service_endpoint": "http://ws.pangaea.de/oai/provider",
+  "metadata_service_type": "oai_pmh",
+  "use_datacite": True,
+  "use_github": False,
+  "metric_version": "metrics_v0.8"
+}
 
     try:
         print(f"📡 Authenticating as '{username}'...")

@@ -1,0 +1,18 @@
+Metric ID,Description,DS1,DS2,DS3,DS4,DS5,DS6,DS7,DS8,DS9,DS10,DS11,DS12,DS13,DS14,DS15,DS16,DS17,DS18,DS19,DS20
+FsF-A1-01M,Metadata contains access level and access conditions of the data.,0,1,1,1,1,0,1,1,1,1,1,0,1,0,1,1,0,1,1,1
+FsF-A1-02MD,Metadata and data are retrievable by their identifier,2,2,2,2,2,1,2,2,2,2,2,1,2,1,2,2,0,2,2,2
+FsF-A1.1-01MD,A standardized communication protocol is used to access metadata and data.,2,2,2,2,2,1,2,2,2,2,2,1,2,2,2,2,1,2,2,2
+FsF-A1.2-01MD,Metadata and data are accessible through a standardized communication protocol which supports authentication.,2,2,2,2,2,1,2,2,2,2,2,1,2,2,2,2,1,2,2,2
+FsF-F1-01MD,Metadata and data are assigned a globally unique identifier.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+FsF-F1-02MD,Metadata and data are assigned a persistent identifier.,1.0,1.0,1.0,1.0,1.0,0,1.0,1.0,1.0,1.0,1.0,0,1.0,1.0,1.0,1.0,0.5,1.0,1.0,1.0
+FsF-F2-01M,"Metadata includes descriptive core elements (creator, title, data identifier, publisher, publication date, summary and keywords) to support data findability.",1,2,2,2,2,0,2,2,2,2,2,0,2,2,2,2,0,2,2,2
+FsF-F3-01M,Metadata includes the identifier of the data it describes.,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,1,1
+FsF-F4-01M,Metadata is offered in such a way that it can be registered or indexed by search engines.,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2
+FsF-I1-01M,Metadata is represented using a formal knowledge representation language.,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2
+FsF-I2-01M,Metadata uses registered semantic resources,0,2,2,0,2,0,2,0,0,2,2,0,0,0,0,0,0,0,2,0
+FsF-I3-01M,Metadata includes qualified references between the data and its related entities.,2,2,2,2,2,0,2,2,2,2,2,0,2,0,2,2,0,2,2,2
+FsF-R1-01M,Metadata specifies the content of the data.,2,2,2,2,2,1,2,2,2,2,2,1,2,1,2,2,0,2,2,2
+FsF-R1.1-01M,Metadata includes license information under which data can be reused.,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,1,0,1,1,1
+FsF-R1.2-01M,Metadata includes provenance information about data creation or generation.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1
+FsF-R1.3-01M,Metadata follows a standard recommended by the target research community of the data.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1
+FsF-R1.3-02D,Data is available in a file format recommended by the target research community.,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,1,1
