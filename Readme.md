@@ -20,17 +20,21 @@ Virtual Research Environments (VREs) are essential for modern data-driven resear
 Install Multipass to create your VMs locally (Experiments with Macbook):
 - `brew install --cask multipass`
 
-Install PyYAML and requests: You'll need this for the Python script to read your configuration. 
+Install required python libraries:
+- `pip install -r requirements.txt`
+
+or individual:
 - `pip install pyyaml`
 - `pip install requests`
 - `pip install flask`
 - `pip install rdflib`
+ 
 
 Execution
 - `python extrac_run.py`
 
 Web interface
-- `python web.py`
+- `python web4.py`
 
 # Ansible script experiments
 **extrac_run.py** creates a ansible script **deploy.yml** file and runs a VM configured by it.
