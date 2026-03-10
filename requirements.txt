@@ -1,0 +1,12 @@
+# Web Framework
+Flask==3.0.2
+
+# Data Serialization & Parsing
+PyYAML==6.0.1
+rdflib==7.0.0
+
+# Networking & API Requests
+requests==2.31.0
+
+# Standard libraries like 'os', 're', 'math', 'json', and 'multiprocessing' 
+# are included with Python and do not need to be listed here.
